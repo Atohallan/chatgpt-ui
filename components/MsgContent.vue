@@ -4,7 +4,6 @@ import MarkdownIt from 'markdown-it'
 import copy from 'copy-to-clipboard'
 import mathjax3 from 'markdown-it-mathjax3'
 
-
 const md = new MarkdownIt({
   linkify: true,
   highlight(code, lang) {
@@ -69,7 +68,6 @@ onMounted(() => {
 })
 
 </script>
-
 <template>
   <v-card
       :color="message.is_bot ? '' : 'primary'"
@@ -85,7 +83,6 @@ onMounted(() => {
     <v-divider :color='message.is_bot? "rgb(var(--v-theme-on-background))" : "rgb(var(--v-theme-on-primary))"'></v-divider>
   </v-card>
 </template>
-
 <style>
 .chat-msg-content {
   font-size: 0.875rem !important;

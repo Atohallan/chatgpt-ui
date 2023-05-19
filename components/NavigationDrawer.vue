@@ -10,7 +10,6 @@ const drawerPermanent = computed(() => {
   return mdAndUp.value
 })
 const user = useUser()
-
 const themes = ref([
   { title: $i18n.t('lightMode'), value: 'light' },
   { title: $i18n.t('darkMode'), value: 'dark' },
@@ -67,14 +66,12 @@ const deleteConversation = async (index) => {
     }
   }
 }
-
 const snackbar = ref(false)
 const snackbarText = ref('')
 const showSnackbar = (text) => {
   snackbarText.value = text
   snackbar.value = true
 }
-
 const loadMessage = async (conversation_id) => {
   const { data, error } = await useAuthFetch(`/api/chat/messages/?conversationId=${conversation_id}`)
   if (!error.value) {
@@ -189,9 +186,7 @@ onNuxtReady(async () => {
 })
 
 const drawer = useDrawer()
-
 </script>
-
 <template>
   <v-navigation-drawer
       v-model="drawer"
