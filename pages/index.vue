@@ -17,7 +17,6 @@ const loadConversation = async () => {
     conversation.value = Object.assign(conversation.value, data.value)
   }
 }
-
 const loadMessage = async () => {
   const { data, error } = await useAuthFetch('/api/chat/messages/?conversationId=' + route.params.id)
   if (!error.value) {
@@ -64,11 +63,8 @@ onActivated(async () => {
 <template>
   <v-app-bar>
     <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
     <v-toolbar-title>{{ navTitle }}</v-toolbar-title>
-
     <v-spacer></v-spacer>
-
     <v-btn
         :title="$t('newConversation')"
         icon="add"
@@ -82,9 +78,7 @@ onActivated(async () => {
     >
       {{ $t('newConversation') }}
     </v-btn>
-
   </v-app-bar>
-
   <v-main>
     <Welcome v-if="!route.params.id && conversation.messages.length === 0" />
     <Conversation :conversation="conversation" />
