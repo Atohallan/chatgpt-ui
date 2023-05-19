@@ -53,14 +53,12 @@ const abortFetch = () => {
 }
 const fetchReply = async (message) => {
   ctrl = new AbortController()
-
   let msg = message
   if (Array.isArray(message)) {
     msg = message[message.length - 1]
   } else {
     message = [message]
   }
-
   let webSearchParams = {}
   if (enableWebSearch.value || msg.tool == 'web_search') {
     webSearchParams['web_search'] = {
@@ -68,7 +66,6 @@ const fetchReply = async (message) => {
       default_prompt: $i18n.t('webSearchDefaultPrompt')
     }
   }
-
   if (msg.tool == 'web_search') {
     msg.tool_args = webSearchParams['web_search']
     msg.type = 100
@@ -196,14 +193,11 @@ const toggleMessage = (index) => {
 }
 
 const enableWebSearch = ref(false)
-
-
 onNuxtReady(() => {
   currentModel.value = getCurrentModel()
 })
 
 </script>
-
 <template>
   <div v-if="conversation">
     <div
@@ -255,13 +249,10 @@ onNuxtReady(() => {
             </v-col>
           </v-row>
         </v-container>
-
         <div ref="grab" class="w-100" style="height: 200px;"></div>
       </div>
     </div>
   </div>
-
-
   <v-footer
       app
       class="footer"
@@ -327,7 +318,6 @@ onNuxtReady(() => {
             </template>
           </v-dialog>
         </div>
-
       </v-toolbar>
     </div>
   </v-footer>
@@ -350,7 +340,6 @@ onNuxtReady(() => {
   </v-snackbar>
 
 </template>
-
 <style scoped>
   .footer {
     width: 100%;
