@@ -76,7 +76,6 @@ const fetchReply = async (message) => {
     msg.tool_args = null
     msg.type = 110
   }
-
   const data = Object.assign({}, currentModel.value, {
     openaiApiKey: $settings.open_api_key_setting === 'True' ? openaiApiKey.value : null,
     message: message,
@@ -260,8 +259,6 @@ onNuxtReady(() => {
       </div>
     </div>
   </div>
-
-
   <v-footer
       app
       class="footer"
@@ -327,7 +324,6 @@ onNuxtReady(() => {
             </template>
           </v-dialog>
         </div>
-
       </v-toolbar>
     </div>
   </v-footer>
@@ -348,9 +344,7 @@ onNuxtReady(() => {
       </v-btn>
     </template>
   </v-snackbar>
-
 </template>
-
 <style scoped>
   .footer {
     width: 100%;
